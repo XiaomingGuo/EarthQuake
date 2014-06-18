@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+  <servlet>
+    <servlet-name>MyWeb</servlet-name>
+    <display-name>This is the homepage</display-name>
+    <description>This is the enter of the web app</description>
+    <servlet-class>com.company.main.MyWeb</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>FirstServlet</servlet-name>
+    <display-name>This is my first servlet web page</display-name>
+    <description>This is a servlet page</description>
+    <servlet-class>com.company.main.FirstServlet</servlet-class>
+        <init-param>
+            <param-name>message</param-name>
+            <param-value>welcome to FirstServlet</param-value>
+        </init-param>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>RequestServlet</servlet-name>
+    <display-name>This is my login servlet</display-name>
+    <description>This is a login page</description>
+    <servlet-class>com.company.main.RequestServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>OutputPicture</servlet-name>
+    <display-name>This is my output  picture</display-name>
+    <description>This is a picture output servlet</description>
+    <servlet-class>com.company.main.OutputPicture</servlet-class>
+  </servlet>
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>MyWeb</servlet-name>
+    <url-pattern>/servlet/MyWeb</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FirstServlet</servlet-name>
+    <url-pattern>/servlet/FirstServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RequestServlet</servlet-name>
+    <url-pattern>/servlet/RequestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OutputPicture</servlet-name>
+    <url-pattern>/servlet/OutputPicture</url-pattern>
+  </servlet-mapping>
+
+</web-app>
