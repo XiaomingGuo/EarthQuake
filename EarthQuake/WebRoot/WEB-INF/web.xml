@@ -34,6 +34,13 @@
     <description>This is a picture output servlet</description>
     <servlet-class>com.company.main.OutputPicture</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>DatabaseServlet</servlet-name>
+    <display-name>This is my output  picture</display-name>
+    <description>This is a picture output servlet</description>
+    <servlet-class>com.company.database.DatabaseServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -53,6 +60,10 @@
   <servlet-mapping>
     <servlet-name>OutputPicture</servlet-name>
     <url-pattern>/servlet/OutputPicture</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DatabaseServlet</servlet-name>
+    <url-pattern>/servlet/DatabaseServlet</url-pattern>
   </servlet-mapping>
 
 </web-app>
