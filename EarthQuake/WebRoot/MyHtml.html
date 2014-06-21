@@ -18,7 +18,7 @@
     	document.getElementById('identity').src='servlet/OutputPicture?ts=' + new Date().getTime();
     }
     </script>
-    <img src="servlet/OutputPicture" id="identity" onload="btn.disabled=false;" />
+    <img src="servlet/OutputPicture" id="identity" onload="btn.disabled=false; " />
     <input type=button value="换个图片" onclick="reloadImage()" id="btn">
   </body>
 </html>

@@ -86,12 +86,12 @@ public class OutputPicture extends HttpServlet {
 			g.drawRect(random.nextInt(width), random.nextInt(height), 1, 1);
 		}
 		
-		ServletOutputStream out = response.getOutputStream();
+		ServletOutputStream out1 = response.getOutputStream();
 		
-		JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(out);
+		JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(out1);
 		
 		encoder.encode(bi);
-		out.flush();
+		out1.flush();
 	}
 
 	/**
