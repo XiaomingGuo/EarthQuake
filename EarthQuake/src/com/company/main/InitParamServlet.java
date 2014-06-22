@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.tools.ForwardingFileObject;
 
+import org.omg.PortableInterceptor.ForwardRequest;
+
 public class InitParamServlet extends HttpServlet {
 
 	/**
@@ -50,8 +52,8 @@ public class InitParamServlet extends HttpServlet {
 		out.println("<style>body, td, div {font-size:12px; }</style>");
 		out.println("  <BODY>");
 		out.println("<form action='" + request.getRequestURI() + "'method='post'>");
-		out.println("’À∫≈£∫<input type='text' name='username' style='width:200px; '> <br/>");
-		out.println("√‹¬Î£∫<input type='password' name='password' style='width:200px; '> <br/><br/>");
+		out.println("’À∫≈£∫<input type='text' name='username' style='width:200px; ' value='admin'> <br/>");
+		out.println("√‹¬Î£∫<input type='password' name='password' style='width:200px; ' value='admin'> <br/><br/>");
 		out.println("<input type='submit' value='login'>");
 		out.println("</form>");
 		out.println("  </BODY>");
@@ -79,9 +81,9 @@ public class InitParamServlet extends HttpServlet {
 			String usernameParam = (String) params.nextElement();
 			String passnameParam = getInitParameter(usernameParam);
 			
-			if (usernameParam.equalsIgnoreCase(password)) {
-				request.getRequestDispatcher("/WEB-INF/notice.html");
-				forward(request, response);
+			if (usernameParam.equalsIgnoreCase(username)
+					&&passnameParam.equals(password)) {
+				request.getRequestDispatcher("/WEB-INF/notice.html").forward(request, response);
 				return;
 			}
 		}

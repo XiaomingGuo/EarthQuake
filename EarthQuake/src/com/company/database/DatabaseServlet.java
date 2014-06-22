@@ -112,9 +112,6 @@ public class DatabaseServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
 		out.println("<HTML>");
-		out.println("<meta http-equiv=\"keywords\" content=\"keyword1,keyword2,keyword3\">");
-		out.println("<meta http-equiv=\"description\" content=\"this is my page\">");
-		out.println("<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">");
 		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
 		out.println("	<meta http-equiv=\"keywords\" content=\"keyword1,keyword2,keyword3\">");
 		out.println("	<meta http-equiv=\"description\" content=\"this is my page\">");
@@ -183,6 +180,7 @@ public class DatabaseServlet extends HttpServlet {
 		out.println("<b>本应用程序在硬盘的根目录为</b>" + this.getServletContext().getRealPath("") + ", <b>网络相对路径为</b>" + contextPath + ". </br>");
 		out.println("<br/>");
 		out.println("<br/><br/> <a href=" + requestURI + "> 单机刷新本页面</a>");
+		out.flush();
 		
 		out.println("    <script>" 
 					+ "function reloadImage() {"
@@ -194,7 +192,6 @@ public class DatabaseServlet extends HttpServlet {
 
 		out.println("  </BODY>");
 		out.println("</HTML>");
-		out.flush();
 		out.close();
 	}
 
